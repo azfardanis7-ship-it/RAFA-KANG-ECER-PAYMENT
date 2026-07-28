@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAFA KANG ECER PAYMENT</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; padding:28px 16px 95px;
+      font-family:Arial,Helvetica,sans-serif; color:#fff;
+      background:radial-gradient(circle at 50% 10%,#08264b 0,#030d1d 38%,#01040a 100%);
+    }
+    .wrap{width:min(100%,560px);margin:auto}
+    .badge{
+      width:max-content;margin:auto;padding:9px 18px;border:1px solid #00d9ff66;
+      border-radius:30px;color:#27dcff;letter-spacing:3px;font-size:12px;
+      box-shadow:0 0 22px #00bfff33
+    }
+    h1{text-align:center;font-size:30px;margin:28px 0 12px}
+    .sub{text-align:center;color:#aab5c5;line-height:1.65;margin-bottom:30px}
+    .card{
+      padding:22px;border:1px solid #31506d;border-radius:28px;
+      background:#071629cc;box-shadow:0 0 30px #00bfff16
+    }
+    .title{font-size:22px;font-weight:700;margin:0 0 4px}
+    .desc{color:#9aaabd;margin:0 0 18px}
+    .qr{
+      display:block;width:100%;max-width:470px;margin:auto;border-radius:18px;
+      background:#fff;padding:8px
+    }
+    .info{
+      margin-top:18px;padding:16px;border-radius:18px;background:#061121;
+      border:1px solid #18354f
+    }
+    .label{font-size:12px;color:#7e91a7;letter-spacing:1px}
+    .value{font-size:17px;font-weight:700;margin-top:5px}
+    .copy{
+      width:100%;margin-top:12px;padding:14px;border:0;border-radius:14px;
+      background:#063a58;color:#55e5ff;font-weight:700;font-size:16px
+    }
+    .wa{
+      position:fixed;left:16px;right:16px;bottom:15px;margin:auto;
+      max-width:528px;padding:16px;border:0;border-radius:18px;
+      background:#22c55e;color:#04150a;font-weight:800;font-size:17px;
+      box-shadow:0 8px 28px #0008
+    }
+    .note{text-align:center;color:#71839a;font-size:12px;margin-top:20px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="badge">SECURE PAYMENT HUB</div>
+    <h1>RAFA KANG ECER PAYMENT</h1>
+    <p class="sub">Pilih metode pembayaran di bawah, lalu kirim bukti pembayaran melalui WhatsApp.</p>
+
+    <section class="card">
+      <p class="title">QRIS</p>
+      <p class="desc">SCAN ALL E-WALLET &amp; BANK</p>
+
+      <img class="qr" src="qris.jpg" alt="QRIS Pembayaran">
+
+      <div class="info">
+        <div class="label">MERCHANT</div>
+        <div class="value">PANN SUKI</div>
+        <div class="label" style="margin-top:14px">NMID</div>
+        <div class="value" id="nmid">ID1025430271920A01</div>
+        <button class="copy" onclick="copyNMID()">Salin NMID</button>
+      </div>
+    </section>
+
+    <p class="note">Pastikan nama merchant sesuai sebelum melakukan pembayaran.</p>
+  </main>
+
+  <button class="wa" onclick="openWA()">💬 Hubungi via WhatsApp</button>
+
+  <script>
+    function copyNMID(){
+      navigator.clipboard.writeText(document.getElementById('nmid').textContent)
+        .then(()=>alert('NMID berhasil disalin!'))
+        .catch(()=>alert('Silakan salin NMID secara manual.'));
+    }
+    function openWA(){
+      const nomor = '62858590237'; // GANTI dengan nomor WhatsApp kamu
+      const pesan = encodeURIComponent('Halo, saya sudah melakukan pembayaran. Berikut bukti pembayaran saya.');
+      window.open('https://wa.me/' + nomor + '?text=' + pesan, '_blank');
+    }
+  </script>
+</body>
+</html>
