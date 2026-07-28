@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAFA KANG ECER PAYMENT</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#020814;color:#fff;font-family:Arial,sans-serif;padding:28px 15px 100px}
+.wrap{max-width:560px;margin:auto}.badge{text-align:center;color:#35ddff;letter-spacing:3px;font-size:12px;border:1px solid #087d9b;padding:10px;border-radius:30px;box-shadow:0 0 25px #00cfff33}
+h1{text-align:center;font-size:29px;margin:25px 0 10px}.sub{text-align:center;color:#a8b5c5;line-height:1.6}
+.card{margin-top:28px;padding:20px;border:1px solid #29445d;border-radius:25px;background:#071629;box-shadow:0 0 30px #00cfff18}
+.title{font-size:22px;font-weight:bold;margin:0}.desc{color:#9baabc;margin:7px 0 18px}
+.qris{width:100%;display:block;border-radius:15px}
+.box{margin-top:17px;padding:16px;background:#06101d;border:1px solid #1b3a52;border-radius:16px}
+.label{font-size:12px;color:#7f93a8;letter-spacing:1px}.value{font-size:17px;font-weight:bold;margin:5px 0 12px}
+button{width:100%;padding:14px;border:0;border-radius:13px;font-weight:bold;font-size:16px;cursor:pointer}
+.copy{background:#063b58;color:#54e6ff}.wa{position:fixed;bottom:15px;left:15px;right:15px;max-width:530px;margin:auto;background:#22c55e;color:#03140a;box-shadow:0 7px 25px #0009}
+.note{text-align:center;color:#718398;font-size:12px;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="badge">SECURE PAYMENT HUB</div>
+<h1>RAFA KANG ECER PAYMENT</h1>
+<p class="sub">Pilih metode pembayaran di bawah, lalu kirim bukti pembayaran melalui WhatsApp.</p>
+
+<div class="card">
+<p class="title">QRIS</p>
+<p class="desc">SCAN ALL E-WALLET &amp; BANK</p>
+<img class="qris" src="qris.jpg" alt="QRIS TU033304 TOKO DENIS">
+
+<div class="box">
+<div class="label">MERCHANT</div>
+<div class="value">TU033304 TOKO DENIS</div>
+<div class="label">NMID</div>
+<div class="value">ID2024338389065A01</div>
+</div>
+
+<div class="box">
+<div class="label">DANA</div>
+<div class="value">085659016338</div>
+<button class="copy" onclick="copyText('085659016338')">Salin Nomor DANA</button>
+</div>
+
+<div class="box">
+<div class="label">GOPAY</div>
+<div class="value">Gunakan nomor yang terdaftar pada QRIS di atas.</div>
+</div>
+</div>
+
+<p class="note">Pastikan nama merchant sesuai sebelum melakukan pembayaran.</p>
+</div>
+
+<button class="wa" onclick="openWA()">💬 Hubungi via WhatsApp</button>
+
+<script>
+function copyText(text){
+ navigator.clipboard.writeText(text).then(()=>alert('Berhasil disalin!')).catch(()=>alert('Gagal menyalin.'));
+}
+function openWA(){
+ const nomor='6285878509237';
+ const pesan=encodeURIComponent('Halo, saya sudah melakukan pembayaran. Berikut bukti pembayaran saya.');
+ window.open('https://wa.me/'+nomor+'?text='+pesan,'_blank');
+}
+</script>
+</body>
+</html>
